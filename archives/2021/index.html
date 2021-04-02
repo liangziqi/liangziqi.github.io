@@ -74,6 +74,60 @@
                 
     
         <article class="box post post-item">
+            <div class="post-title"><a href="/2021/04/02/post/">昆明热身赛</a></div>
+            <div class="post-meta">
+                
+                <i class="fa fa-calendar"></i> <time>2021-04-02</time>
+                <span class="dotted">|</span>
+                <i class="fa fa-user"></i> 
+            </div>
+
+            <div class="post-excerpt">
+                <a href="/2021/04/02/post/">
+                    <p>
+                        
+                            
+    
+    
+        MathJax.Hub.Config({
+            tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            inlineMath: [['$','$']]
+            }
+        });
+    
+
+今天打了热身赛，三道签到题。但我没做出来，过来一个星期没练就生疏了。
+
+T1让你求在n个数中取k个能得到的最大和，经典sb题。
+T2题意是n个数，第i次操作是让第i个数加上（n-1）*s，其他数减去s。
+打的时候脑瘫了，让队友去写线段树，队友写炸了。大雾
+容易看出第i次操作后，位置为[1,i]的数的值为原数+(n-i)*s。
+位置为[i+1,n]的数的值为原数-i*s。
+所以做前后缀min，对于每一次操作都能o(1)求最小值。
+T3题意是有n个路灯位置为[1,n]，k个雕塑，告诉你k个雕塑的位置与价值，从i路灯移到j路灯的代价为|i-j|*s。问将雕塑按位置使价值从小到大排列的最小代价，k&lt;=n&lt;=5000。
+比较水的动态规划，dp[i][j]表示在1-j的位置上保证前i个雕塑合法的最优解。
+那么dp[i][j]=$\max(dp[i][j-1],dp[i-1][j-1]+\lvert i-j \rvert)$
+
+                        
+                    </p>
+                </a>
+            </div>
+
+            
+                <div class="post-footer">
+                    
+                    
+                        <i class="fa fa-tags"></i>
+                        <a class="tag-none-link" href="/tags/ACM/" rel="tag">ACM</a>
+                    
+                </div>
+            
+        </article>
+    
+
+    
+        <article class="box post post-item">
             <div class="post-title"><a href="/2021/03/31/hello-world/">杀鸟</a></div>
             <div class="post-meta">
                 
@@ -118,6 +172,10 @@
     <ul class="item-box">
         
             
+                <li><a href="/2021/04/02/post/">昆明热身赛</a></li>
+            
+        
+            
                 <li><a href="/2021/03/31/hello-world/">杀鸟</a></li>
             
         
@@ -130,11 +188,18 @@
         
   <div class="box widget">
     <div class="title">归档</div>
-    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">2021-03</a><span class="archive-list-count">1</span></li></ul>
+    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">2021-04</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">2021-03</a><span class="archive-list-count">1</span></li></ul>
   </div>
 
     
         
+    <div class="box widget">
+        <div class="title">标签</div>
+        <div class="item-box cloud-label">
+            <a href="/tags/ACM/" style="font-size: 10px;">ACM</a>
+        </div>
+    </div>
+
     
 </div>
         </section>
