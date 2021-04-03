@@ -74,6 +74,75 @@
                 
     
         <article class="box post post-item">
+            <div class="post-title"><a href="/2021/04/03/Kunming-region/">昆明区域赛</a></div>
+            <div class="post-meta">
+                
+                <i class="fa fa-calendar"></i> <time>2021-04-03</time>
+                <span class="dotted">|</span>
+                <i class="fa fa-user"></i> 
+            </div>
+
+            <div class="post-excerpt">
+                <a href="/2021/04/03/Kunming-region/">
+                    <p>
+                        
+                            这场800多个队打，我这么菜根本拿不了牌。
+还有题目怎么这么鬼畜，纸质题面的某些题竟然和电脑的题面的序号对不上。
+开局看了一会题，队长发现H题过了500多个人，发现是一道真签到题。
+过了一会发现其他题都没什么思路，然后发现很多人A了L题，于是看L。
+
+L的题意:给定一个排列，排列中逆序的两个位置连一条边，然后给这些位置染色，要求给球染色最少需要多少颜色，并给出一个正确的染色方式，n&lt;=1e5。
+
+自己想了很久都想不出来L怎么做，感觉可以求mex，但这个复杂度感觉有问题(没问题就是我不会写)
+队友想了好久，发现这可以答案是最长下降子序列的长度，那么染色的方式就是将当前点染成与当前数在最长下降子序列的位置。这样可以保证是正确的。
+然后我去看k题。
+
+K的题意:给定一个排列，每次可以选很多对位置进行交换，但每个位置每次只能被交换一次。比如（1，3，2，4），假如这次操作交换第1和第2个数，那么这次操作的其他交换中不能再出现第1和第2个数，也就是只能再交换第3个数和第4个数。然后求最少用几次操作。并求出每次操作的方式。
+
+容易看出这玩意就是个置换环，但是怎么求答案呢？
+
+    
+    
+        MathJax.Hub.Config({
+            tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            inlineMath: [['$','$']]
+            }
+        });
+    
+
+我一开始的想法是答案是$max(\lceil \log2(置换环的长度) \rceil)$
+
+然后Wa了两个小时。
+想了好久觉得代码没错，然后终于发现是答案有问题，我随手画了个图，然后发现对于每个置换环，答案要不是1，要不是2。
+a[i]=i,那么第i个位置不参与交换。
+环的元素有两个，那么直接交换，答案为1。
+环的元素多于两个，那么交换方式就是下图。
+ 
+所以答案只能是0，1，2。然后这个方式就是答案
+要不是这个数据这么弱，怎么可能跳进坑
+J题的计算几何，丢给队长做，然后队长没做出来。
+成功打铁，回去睡觉。
+
+                        
+                    </p>
+                </a>
+            </div>
+
+            
+                <div class="post-footer">
+                    
+                    
+                        <i class="fa fa-tags"></i>
+                        <a class="tag-none-link" href="/tags/ACM/" rel="tag">ACM</a>
+                    
+                </div>
+            
+        </article>
+    
+
+    
+        <article class="box post post-item">
             <div class="post-title"><a href="/2021/04/02/post/">昆明热身赛</a></div>
             <div class="post-meta">
                 
@@ -174,6 +243,10 @@ T3题意是有n个路灯位置为[1,n]，k个雕塑，告诉你k个雕塑的位�
     <ul class="item-box">
         
             
+                <li><a href="/2021/04/03/Kunming-region/">昆明区域赛</a></li>
+            
+        
+            
                 <li><a href="/2021/04/02/post/">昆明热身赛</a></li>
             
         
@@ -190,7 +263,7 @@ T3题意是有n个路灯位置为[1,n]，k个雕塑，告诉你k个雕塑的位�
         
   <div class="box widget">
     <div class="title">归档</div>
-    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">2021-04</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">2021-03</a><span class="archive-list-count">1</span></li></ul>
+    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">2021-04</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">2021-03</a><span class="archive-list-count">1</span></li></ul>
   </div>
 
     

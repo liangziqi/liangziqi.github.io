@@ -8,23 +8,22 @@
 
 
 
-    <meta name="keywords" content=""/>
+    <meta name="keywords" content="ACM,"/>
 
 
 
-    <meta name="description" content="
-    
-    
-        MathJax.Hub.Config({
-            tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-          ..."/>
+    <meta name="description" content="这场800多个队打，我这么菜根本拿不了牌。
+还有题目怎么这么鬼畜，纸质题面的某些题竟然和电脑的题面的序号对不上。
+开局看了一会题，队长发现H题过了500多个人，发现是一道真签到题。
+过了一会发现其他题都没什么思路，然后发现很多人A了L题，于是看L。
+
+L的题意:给定一个排列，排列中逆序的两个位..."/>
 
 
 <meta name="Robots" content="all">
 
 
-    <title>Maomaofat&#39;s Blog | resume</title>
+    <title>Maomaofat&#39;s Blog | 昆明区域赛</title>
 
 
 <link rel="icon" href="/images/favicon.ico">
@@ -78,17 +77,37 @@
         <section class="content global-width">
             <div class="main">
                 <article class="box post">
-    <div class="post-title align-center detail-title">resume</div>
+    <div class="post-title align-center detail-title">昆明区域赛</div>
     <div class="post-meta align-center">
         
-        <i class="fa fa-calendar"></i> <time>2021-04-01</time>
+        <i class="fa fa-calendar"></i> <time>2021-04-03</time>
         <span class="dotted">|</span>
         <i class="fa fa-user"></i> 
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                <a class="tag-none-link" href="/tags/ACM/" rel="tag">ACM</a>
+            
         
     </div>
 
     <div class="post-content">
-        <head>
+        <p>这场800多个队打，我这么菜根本拿不了牌。</p>
+<p>还有题目怎么这么鬼畜，纸质题面的某些题竟然和电脑的题面的序号对不上。</p>
+<p>开局看了一会题，队长发现H题过了500多个人，发现是一道真签到题。</p>
+<p>过了一会发现其他题都没什么思路，然后发现很多人A了L题，于是看L。</p>
+<blockquote>
+<p>L的题意:给定一个排列，排列中逆序的两个位置连一条边，然后给这些位置染色，要求给球染色最少需要多少颜色，并给出一个正确的染色方式，n&lt;=1e5。</p>
+</blockquote>
+<p>自己想了很久都想不出来L怎么做，感觉可以求mex，但这个复杂度感觉有问题(<del>没问题就是我不会写</del>)</p>
+<p>队友想了好久，发现这可以答案是最长下降子序列的长度，那么染色的方式就是将当前点染成与当前数在最长下降子序列的位置。这样可以保证是正确的。</p>
+<p>然后我去看k题。</p>
+<blockquote>
+<p>K的题意:给定一个排列，每次可以选很多对位置进行交换，但每个位置每次只能被交换一次。比如（1，3，2，4），假如这次操作交换第1和第2个数，那么这次操作的其他交换中不能再出现第1和第2个数，也就是只能再交换第3个数和第4个数。然后求最少用几次操作。并求出每次操作的方式。</p>
+</blockquote>
+<p>容易看出这玩意就是个置换环，但是怎么求答案呢？</p>
+<head>
     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
     <script type="text/x-mathjax-config">
         MathJax.Hub.Config({
@@ -99,18 +118,18 @@
         });
     </script>
 </head>
-## 关于作者
-目前大一，每天早八上课，数学专业，学数分高代学到头秃。
+我一开始的想法是答案是$max(\lceil \log2(置换环的长度) \rceil)$
 
-<p>也是一个比较水的oier，基本上难题只会打暴力（</p>
-<p>博客会发一些关于我对课程的理解，有时写写OI的题解，偶尔发发牢骚<del>大雾</del></p>
-<p>喜欢玩原神，因为比较养生，每天上线20分钟就能退游戏了。</p>
-<p>blog的各种功能会不断完善，也会注重整理。</p>
-<p>其实也是为了期末考的时候能找到资料复习。</p>
-<p>之后打算自学各种前端需要的语言。<del>逐渐变成社畜</del></p>
-<p>作者的室友天天擦枪[害怕.jpeg]</p>
-<p>希望自己能够做的到吧。</p>
-<p>$ e = m c^2 $</p>
+<p>然后Wa了两个小时。</p>
+<p>想了好久觉得代码没错，然后终于发现是答案有问题，我随手画了个图，然后发现对于每个置换环，答案要不是1，要不是2。</p>
+<p>a[i]=i,那么第i个位置不参与交换。</p>
+<p>环的元素有两个，那么直接交换，答案为1。</p>
+<p>环的元素多于两个，那么交换方式就是下图。</p>
+<p><img src="/images/step1.png" alt="第一步"> <img src="/images/step2.png" alt="第二步"></p>
+<p>所以答案只能是0，1，2。然后这个方式就是答案</p>
+<p><del>要不是这个数据这么弱，怎么可能跳进坑</del></p>
+<p>J题的计算几何，丢给队长做，然后队长没做出来。</p>
+<p>成功打铁，回去睡觉。</p>
 
     </div>
 </article>
