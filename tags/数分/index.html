@@ -8,23 +8,17 @@
 
 
 
-    <meta name="keywords" content="ACM,"/>
+    <meta name="keywords" content=""/>
 
 
 
-    <meta name="description" content="
-    
-    
-        MathJax.Hub.Config({
-            tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-          ..."/>
+    <meta name="description" content=""/>
 
 
 <meta name="Robots" content="all">
 
 
-    <title>Maomaofat&#39;s Blog | 昆明热身赛</title>
+    <title>Maomaofat&#39;s Blog</title>
 
 
 <link rel="icon" href="/images/favicon.ico">
@@ -77,50 +71,66 @@
 
         <section class="content global-width">
             <div class="main">
-                <article class="box post">
-    <div class="post-title align-center detail-title">昆明热身赛</div>
-    <div class="post-meta align-center">
-        
-        <i class="fa fa-calendar"></i> <time>2021-04-02</time>
-        <span class="dotted">|</span>
-        <i class="fa fa-user"></i> 
-        
-            
-            
-                <i class="fa fa-tags"></i>
-                <a class="tag-none-link" href="/tags/ACM/" rel="tag">ACM</a>
-            
-        
-    </div>
+                
+    
+        <article class="box post post-item">
+            <div class="post-title"><a href="/2021/04/04/improper-integral/">无穷积分</a></div>
+            <div class="post-meta">
+                
+                <i class="fa fa-calendar"></i> <time>2021-04-04</time>
+                <span class="dotted">|</span>
+                <i class="fa fa-user"></i> 
+            </div>
 
-    <div class="post-content">
-        <head>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-    <script type="text/x-mathjax-config">
+            <div class="post-excerpt">
+                <a href="/2021/04/04/improper-integral/">
+                    <p>
+                        
+                            无穷限反常积分定义
+    
+    
         MathJax.Hub.Config({
             tex2jax: {
             skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
             inlineMath: [['$','$']]
             }
         });
-    </script>
-</head>
-今天打了热身赛，三道签到题。但我没做出来，过来一个星期没练就生疏了。
+    
 
-<p>T1让你求在n个数中取k个能得到的最大和，经典sb题。</p>
-<p>T2题意是n个数，第i次操作是让第i个数加上（n-1）*s，其他数减去s。</p>
-<p>打的时候脑瘫了，让队友去写线段树，队友写炸了。<del>大雾</del></p>
-<p>容易看出第i次操作后，位置为[1,i]的数的值为原数+(n-i)*s。</p>
-<p>位置为[i+1,n]的数的值为原数-i*s。</p>
-<p>所以做前后缀min，对于每一次操作都能o(1)求最小值。</p>
-<p>T3题意是有n个路灯位置为[1,n]，k个雕塑，告诉你k个雕塑的位置与价值，从i路灯移到j路灯的代价为|i-j|*s。问将雕塑按位置使价值从小到大排列的最小代价，k&lt;=n&lt;=5000。</p>
-<p>比较水的动态规划，dp[i][j]表示在1-j的位置上保证前i个雕塑合法的最优解。</p>
-<p>那么dp[i][j]=$\max(dp[i][j-1],dp[i-1][j-1]+\lvert i-j \rvert*s)$</p>
-<p>所以热身赛都是水题<del>感觉全场只有我没有AK</del></p>
-<p><img src="/images/mnz.jpg" alt="我太菜了"></p>
+设函数f定义在无穷区间[a,$+\infty$)上，且在任何有限区间[a,u]上可积。如果存在极限
+$$\lim_{u\rightarrow+\infty}\int ^u_a f(x)dx =J$$
+则称极限J为函数在[a,$+\infty$)上的无穷限反常积分
 
-    </div>
-</article>
+并称$\int ^{+\infty}_a f(x)dx$ 收敛。如果极限J不存在，则称其发散。
+瑕积分定义设函数f在(a,b]上，在点a的任一右邻域上无上界但在任何闭区间[u,b]$\subset$(a,b]上有界且可积，如果存在极限:$$\lim_{u\rightarrow{a^+}}\int ^b_u f(x)dx = J$$
+则极限J为无界函数的反常积分，并称反常积分$\int ^b_a f(x)dx$收敛，反之则发散
+由于被积函数在点a近旁是无界的，这是点a称为f的瑕点，而无界函数反常积分$\int ^b_a f(x)dx$又称为瑕积分。
+无穷积分的性质定理一无穷积分$\int ^{+\infty}_a f(x)dx$ 收敛的充分必要条件是:
+对于${\forall}\epsilon &gt; 0$,$\exists G&gt;0$,只要u1,u2&gt;G,便有$$|\int ^{u2}_a f(x)dx - \int ^{u1}a f(x)dx| = |\int ^{u2}{u1} f(x)dx| &lt; \epsilon$$
+性质一$\int ^{+\infty}_a f1(x)dx$收敛，$\int ^{+\infty}_a g(x)dx$收敛,那么$\int ^{+\infty}_a [k1f(x)+k2g(x)]dx$也收敛,且:$\int ^{+\infty}_a [k1f(x)+k2g(x)]dx$=$\int ^{+\infty}_a f1(x)dx$ + $\int ^{+\infty}_a g(x)dx$
+性质二$\int ^{+\infty}_a f(x)dx$收敛的另一个充要条件:
+$\forall \epsilon &gt;0$,$\exists G \geq a$，当u &gt; G时，总有$|\int ^{+\infty}_u f(x)dx| &lt; \epsilon$
+性质三若f在任何有限区间[a,u]上可积，且有$\int ^{+\infty}_a |f(x)|dx$收敛，则$\int ^{+\infty}_a f(x)dx$也必收敛，并有:$$|\int ^{+\infty}_a f(x)dx| \leq \int ^{+\infty}_a |f(x)|dx$$
+
+                        
+                    </p>
+                </a>
+            </div>
+
+            
+                <div class="post-footer">
+                    
+                    
+                        <i class="fa fa-tags"></i>
+                        <a class="tag-none-link" href="/tags/%E6%95%B0%E5%88%86/" rel="tag">数分</a>, <a class="tag-none-link" href="/tags/%E7%A7%AF%E5%88%86/" rel="tag">积分</a>
+                    
+                </div>
+            
+        </article>
+    
+
+
+
             </div>
             <div class="aside">
     

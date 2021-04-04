@@ -74,6 +74,63 @@
                 
     
         <article class="box post post-item">
+            <div class="post-title"><a href="/2021/04/04/improper-integral/">无穷积分</a></div>
+            <div class="post-meta">
+                
+                <i class="fa fa-calendar"></i> <time>2021-04-04</time>
+                <span class="dotted">|</span>
+                <i class="fa fa-user"></i> 
+            </div>
+
+            <div class="post-excerpt">
+                <a href="/2021/04/04/improper-integral/">
+                    <p>
+                        
+                            无穷限反常积分定义
+    
+    
+        MathJax.Hub.Config({
+            tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            inlineMath: [['$','$']]
+            }
+        });
+    
+
+设函数f定义在无穷区间[a,$+\infty$)上，且在任何有限区间[a,u]上可积。如果存在极限
+$$\lim_{u\rightarrow+\infty}\int ^u_a f(x)dx =J$$
+则称极限J为函数在[a,$+\infty$)上的无穷限反常积分
+
+并称$\int ^{+\infty}_a f(x)dx$ 收敛。如果极限J不存在，则称其发散。
+瑕积分定义设函数f在(a,b]上，在点a的任一右邻域上无上界但在任何闭区间[u,b]$\subset$(a,b]上有界且可积，如果存在极限:$$\lim_{u\rightarrow{a^+}}\int ^b_u f(x)dx = J$$
+则极限J为无界函数的反常积分，并称反常积分$\int ^b_a f(x)dx$收敛，反之则发散
+由于被积函数在点a近旁是无界的，这是点a称为f的瑕点，而无界函数反常积分$\int ^b_a f(x)dx$又称为瑕积分。
+无穷积分的性质定理一无穷积分$\int ^{+\infty}_a f(x)dx$ 收敛的充分必要条件是:
+对于${\forall}\epsilon &gt; 0$,$\exists G&gt;0$,只要u1,u2&gt;G,便有$$|\int ^{u2}_a f(x)dx - \int ^{u1}a f(x)dx| = |\int ^{u2}{u1} f(x)dx| &lt; \epsilon$$
+性质一$\int ^{+\infty}_a f1(x)dx$收敛，$\int ^{+\infty}_a g(x)dx$收敛,那么$\int ^{+\infty}_a [k1f(x)+k2g(x)]dx$也收敛,且:$\int ^{+\infty}_a [k1f(x)+k2g(x)]dx$=$\int ^{+\infty}_a f1(x)dx$ + $\int ^{+\infty}_a g(x)dx$
+性质二$\int ^{+\infty}_a f(x)dx$收敛的另一个充要条件:
+$\forall \epsilon &gt;0$,$\exists G \geq a$，当u &gt; G时，总有$|\int ^{+\infty}_u f(x)dx| &lt; \epsilon$
+性质三若f在任何有限区间[a,u]上可积，且有$\int ^{+\infty}_a |f(x)|dx$收敛，则$\int ^{+\infty}_a f(x)dx$也必收敛，并有:$$|\int ^{+\infty}_a f(x)dx| \leq \int ^{+\infty}_a |f(x)|dx$$
+
+                        
+                    </p>
+                </a>
+            </div>
+
+            
+                <div class="post-footer">
+                    
+                    
+                        <i class="fa fa-tags"></i>
+                        <a class="tag-none-link" href="/tags/%E6%95%B0%E5%88%86/" rel="tag">数分</a>, <a class="tag-none-link" href="/tags/%E7%A7%AF%E5%88%86/" rel="tag">积分</a>
+                    
+                </div>
+            
+        </article>
+    
+
+    
+        <article class="box post post-item">
             <div class="post-title"><a href="/2021/04/03/Kunming-region/">昆明区域赛</a></div>
             <div class="post-meta">
                 
@@ -243,6 +300,10 @@ T3题意是有n个路灯位置为[1,n]，k个雕塑，告诉你k个雕塑的位�
     <ul class="item-box">
         
             
+                <li><a href="/2021/04/04/improper-integral/">无穷积分</a></li>
+            
+        
+            
                 <li><a href="/2021/04/03/Kunming-region/">昆明区域赛</a></li>
             
         
@@ -263,7 +324,7 @@ T3题意是有n个路灯位置为[1,n]，k个雕塑，告诉你k个雕塑的位�
         
   <div class="box widget">
     <div class="title">归档</div>
-    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">2021-04</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">2021-03</a><span class="archive-list-count">1</span></li></ul>
+    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/04/">2021-04</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">2021-03</a><span class="archive-list-count">1</span></li></ul>
   </div>
 
     
@@ -271,7 +332,7 @@ T3题意是有n个路灯位置为[1,n]，k个雕塑，告诉你k个雕塑的位�
     <div class="box widget">
         <div class="title">标签</div>
         <div class="item-box cloud-label">
-            <a href="/tags/ACM/" style="font-size: 10px;">ACM</a>
+            <a href="/tags/ACM/" style="font-size: 20px;">ACM</a> <a href="/tags/%E6%95%B0%E5%88%86/" style="font-size: 10px;">数分</a> <a href="/tags/%E7%A7%AF%E5%88%86/" style="font-size: 10px;">积分</a>
         </div>
     </div>
 
