@@ -151,9 +151,14 @@ $$\lim_{u\rightarrow+\infty}\int ^u_a f(x)dx =J$$
 <p>(ii) $p \leq 1, 0 &lt; \lambda \leq +\infty$ 时, $\int^{+\infty}_a f(x)dx$ 发散</p>
 </blockquote>
 <h2 id="一般无穷积分的敛散判别法"><a href="#一般无穷积分的敛散判别法" class="headerlink" title="一般无穷积分的敛散判别法"></a>一般无穷积分的敛散判别法</h2><h3 id="狄利克雷判别法"><a href="#狄利克雷判别法" class="headerlink" title="狄利克雷判别法"></a>狄利克雷判别法</h3><p>若 $F(u) = \int ^u_a f(x)dx$ 在[a,$+\infty$)上有界,g(x)在[a,$+\infty$)上当$x\rightarrow +\infty$时单调趋于0,则$\int^{+\infty}_a f(x)g(x)dx$ 收敛</p>
-<p>证明:(待补)</p>
+<p>证明:</p>
+<p>设$|\int^u_a f(x)dx| \leq M, u \in [a,+\infty)$.</p>
+<p>$\forall \epsilon &gt; 0, \exists G \geq a,x &gt; G$时,有<br>$$|g(x)| &lt; \frac{\epsilon}{4M}$$<br>g为单调函数,由第二中值定理推论:<br>对于任何b&gt;a&gt;G,$\exists t \in [a,b]$ 使得<br>$$\int^b_a f(x)g(x)dx = g(a)\int^t_a f(x)dx + g(b)\int^b_t f(x)dx$$<br>于是<br>$$|\int^b_a f(x)g(x)dx| = |g(a)||\int^t_a f(x)dx| + |g(b)||\int^b_t f(x)dx|$$<br>$$|\int^b_a f(x)g(x)dx| \leq \frac{\epsilon}{4M}*4M = \epsilon$$<br>证毕</p>
 <h3 id="阿贝尔-Abel-判别法-为什么不叫阿贝多"><a href="#阿贝尔-Abel-判别法-为什么不叫阿贝多" class="headerlink" title="阿贝尔(Abel)判别法(为什么不叫阿贝多)"></a>阿贝尔(Abel)判别法(<del>为什么不叫阿贝多</del>)</h3><p>若$\int^{+\infty}_a f(x)dx$ 收敛,g(x)在[a,$+\infty$)上单调有界,则$\int^{+\infty}_af(x)g(x)dx$ 收敛</p>
-<p>证明:(待补)</p>
+<p>证明:<br>设$J = \lim_{x\rightarrow +\infty}g(x)$</p>
+<p>$$\int^{+\infty}_a f(x)g(x)dx = J\int^{+\infty}_a f(x)dx+\int^{+\infty}_a f(x)[g(x)-J]dx$$</p>
+<p>右边第一项收敛,第二项可以用上述的狄利克雷判别法证明其收敛,所以$\int^{+\infty}_a f(x)g(x)dx$收敛</p>
+<p>由于瑕积分的性质,敛散判别法基本于无穷积分相似,故不再赘述(<del>其实是因为我懒</del></p>
 
     </div>
 </article>
