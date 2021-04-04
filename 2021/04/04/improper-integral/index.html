@@ -114,11 +114,46 @@ $$\lim_{u\rightarrow+\infty}\int ^u_a f(x)dx =J$$
 <p>则极限J为无界函数的反常积分，并称反常积分$\int ^b_a f(x)dx$收敛，反之则发散</p>
 <p>由于被积函数在点a近旁是无界的，这是点a称为f的瑕点，而无界函数反常积分$\int ^b_a f(x)dx$又称为瑕积分。</p>
 <h2 id="无穷积分的性质"><a href="#无穷积分的性质" class="headerlink" title="无穷积分的性质"></a>无穷积分的性质</h2><h3 id="定理一"><a href="#定理一" class="headerlink" title="定理一"></a>定理一</h3><p>无穷积分$\int ^{+\infty}_a f(x)dx$ 收敛的充分必要条件是:</p>
-<p>对于${\forall}\epsilon &gt; 0$,$\exists G&gt;0$,只要u1,u2&gt;G,便有<br>$$|\int ^{u2}_a f(x)dx - \int ^{u1}<em>a f(x)dx| = |\int ^{u2}</em>{u1} f(x)dx| &lt; \epsilon$$</p>
+<p>对于${\forall}\epsilon &gt; 0$,$\exists G&gt;0$,只要M,N&gt;G,便有<br>$$|\int ^M_a f(x)dx - \int ^N_a f(x)dx| = |\int ^M_N f(x)dx| &lt; \epsilon$$</p>
 <h3 id="性质一"><a href="#性质一" class="headerlink" title="性质一"></a>性质一</h3><p>$\int ^{+\infty}_a f1(x)dx$收敛，$\int ^{+\infty}_a g(x)dx$收敛,那么$\int ^{+\infty}_a [k1f(x)+k2g(x)]dx$也收敛,且:<br>$\int ^{+\infty}_a [k1f(x)+k2g(x)]dx$=$\int ^{+\infty}_a f1(x)dx$ + $\int ^{+\infty}_a g(x)dx$</p>
 <h3 id="性质二"><a href="#性质二" class="headerlink" title="性质二"></a>性质二</h3><p>$\int ^{+\infty}_a f(x)dx$收敛的另一个充要条件:</p>
 <p>$\forall \epsilon &gt;0$,$\exists G \geq a$，当u &gt; G时，总有$|\int ^{+\infty}_u f(x)dx| &lt; \epsilon$</p>
 <h3 id="性质三"><a href="#性质三" class="headerlink" title="性质三"></a>性质三</h3><p>若f在任何有限区间[a,u]上可积，且有$\int ^{+\infty}_a |f(x)|dx$收敛，则$\int ^{+\infty}_a f(x)dx$也必收敛，并有:<br>$$|\int ^{+\infty}_a f(x)dx| \leq \int ^{+\infty}_a |f(x)|dx$$</p>
+<p>$\int ^{+\infty}_a |f(x)|dx$收敛时收敛时，称$\int ^{+\infty}_a |f(x)|dx$为绝对收敛。绝对收敛的无穷积分，自身一定收敛，逆命题不成立。</p>
+<p>收敛而不绝对收敛者称为条件收敛</p>
+<h2 id="非负函数无穷积分的敛散判别法"><a href="#非负函数无穷积分的敛散判别法" class="headerlink" title="非负函数无穷积分的敛散判别法"></a>非负函数无穷积分的敛散判别法</h2><h3 id="定理-比较原则"><a href="#定理-比较原则" class="headerlink" title="定理(比较原则)"></a>定理(比较原则)</h3><blockquote>
+<p>设定义在[a,$+/infty$)上的两个非负函数f和g都在任何有限区间[a,u]上可积,且满足<br>$$f(x) \leq g(x), x \in [a,+\infty)$$</p>
+</blockquote>
+<p>则当$\int ^{+\infty}_a g(x)dx$收敛时,$\int ^{+\infty}_a f(x)dx$必收敛($\int ^{+\infty}_a f(x)dx$发散时,$\int ^{+\infty}_a g(x)dx$必发散)</p>
+<h4 id="推论1"><a href="#推论1" class="headerlink" title="推论1"></a>推论1</h4><p>若f和g都在任何有限区间[a,u]上可积,当$x \in [a,+\infty)$时,f(x)&gt;=0,g(x)&gt;0,且$\lim_{x\rightarrow+\infty}{\frac{f(x)}{g(x)}}=c$,则有:</p>
+<blockquote>
+<p>(i) 当 0 &lt; c &lt; $+\infty$时,$\int ^{+\infty}_a f(x)dx$ 与$\int ^{+\infty}_a g(x)dx$ 同敛态</p>
+</blockquote>
+<blockquote>
+<p>(ii)当 c = 0 时,由$\int ^{+\infty}_a g(x)dx$ 收敛可推知$\int ^{+\infty}_a f(x)dx$ 收敛</p>
+</blockquote>
+<blockquote>
+<p>(iii) 当 c = $+\infty$ 时,由$\int ^{+\infty}_a g(x)dx$ 发散可推知$\int ^{+\infty}_a f(x)dx$ 也发散</p>
+</blockquote>
+<p>如果选用$\int ^{+\infty}_1 \frac{dx}{x^p}$作为比较对象,则有以下两个推论(柯西判别法)</p>
+<h4 id="推论2"><a href="#推论2" class="headerlink" title="推论2"></a>推论2</h4><p>设f定义于[a,$+\infty$)(a&gt;0),且在任何有限区间[a,u]上可积,则有</p>
+<blockquote>
+<p>(i) 当 $0 \leq f(x) \leq \frac{1}{x^p}, x \in [a,+\infty)$,且p &gt; 1,$\int ^{+\infty}_a f(x)dx$ 收敛</p>
+</blockquote>
+<blockquote>
+<p>(ii) 当 $f(x) \geq \frac {1}{x^p}, x \in [a,+\infty)$,p $\leq$ 1,$\int ^{+\infty}_a f(x)dx$ 发散</p>
+</blockquote>
+<h4 id="推论3"><a href="#推论3" class="headerlink" title="推论3"></a>推论3</h4><p>设f是定义于[a,$+\infty$)上的非负函数,在任何有限区间[a,u]上可积,且$\lim_{x\rightarrow+\infty}x^p f(x) = \lambda$ 则有:</p>
+<blockquote>
+<p>(i) $p &gt; 1,0 \leq \lambda &lt; +\infty$ 时,$\int^{+\infty}_a f(x)dx$ 收敛.</p>
+</blockquote>
+<blockquote>
+<p>(ii) $p \leq 1, 0 &lt; \lambda \leq +\infty$ 时, $\int^{+\infty}_a f(x)dx$ 发散</p>
+</blockquote>
+<h2 id="一般无穷积分的敛散判别法"><a href="#一般无穷积分的敛散判别法" class="headerlink" title="一般无穷积分的敛散判别法"></a>一般无穷积分的敛散判别法</h2><h3 id="狄利克雷判别法"><a href="#狄利克雷判别法" class="headerlink" title="狄利克雷判别法"></a>狄利克雷判别法</h3><p>若 $F(u) = \int ^u_a f(x)dx$ 在[a,$+\infty$)上有界,g(x)在[a,$+\infty$)上当$x\rightarrow +\infty$时单调趋于0,则$\int^{+\infty}_a f(x)g(x)dx$ 收敛</p>
+<p>证明:(待补)</p>
+<h3 id="阿贝尔-Abel-判别法-为什么不叫阿贝多"><a href="#阿贝尔-Abel-判别法-为什么不叫阿贝多" class="headerlink" title="阿贝尔(Abel)判别法(为什么不叫阿贝多)"></a>阿贝尔(Abel)判别法(<del>为什么不叫阿贝多</del>)</h3><p>若$\int^{+\infty}_a f(x)dx$ 收敛,g(x)在[a,$+\infty$)上单调有界,则$\int^{+\infty}_af(x)g(x)dx$ 收敛</p>
+<p>证明:(待补)</p>
 
     </div>
 </article>
