@@ -210,6 +210,57 @@ int main() &#123;
 &#125;
 
 
+Update
+F. Flip the Cards题意:有n张卡片,正反面都有数字,大小为1~2n,且每个数字都只会出现一次,设$a_i$表示第i张卡片正面的数字,$b_i$表示第i张卡片背面的数字,可以翻卡来交换正反面,问至少进行几次翻卡,任意选择卡片的位置,满足$$a_1 &lt; a_2 &lt; … &lt; a_{n-1} &lt; a_n$$$$b_1 &gt; b_2 &gt; … &gt; b_{n-1} &gt; b_n$$
+
+性质1:如果卡片数字正面为1n的背面数字也是1n,那么这种情况肯定无法满足条件,因为肯定也有一张卡片正面和反面的数字都是n+1~2n.这两张卡片无论如何翻都无法满足条件.
+
+
+性质2:用$f(x), x \in [1,n]$表示一个面数字为x的卡片另一面的数字,可以发现想要满足条件那么$f(x)$可以分成两个递减序列.
+
+那么问题就变成把$f(x)$分成两个递减序列至少需要翻面几次.
+考虑如何贪心,可以把这些数放入两个满足递减的集合,对与特定的$i$,满足$$\min\limits_{j\le i} f(j)&gt;\max\limits_{j&gt;i}f(j)$$那么可以把i和i+1设置一个断点,这样可以把序列分成若干个段.
+每一个段互不影响,并且每一个段只有两种分配方式,就可以贪心了.
+复杂度$O(n)$
+#include&lt;bits/stdc++.h&gt;
+using namespace std;
+const int N = 200005;
+int n, a[N], b[N], mn[N], mx[N], dd[N], tot, ans;
+int A[N], B[N];
+int main() &#123;
+    scanf(&quot;%d&quot;,&amp;n);
+    for(int i = 1; i &lt;= n; i++) &#123;
+        int x, y; scanf(&quot;%d%d&quot;,&amp;x, &amp;y);
+        if (x &lt;= n) a[x] = y;
+        if (y &lt;= n) a[y] = x, b[y] = 1;
+    &#125;
+    for(int i = 1; i &lt;= n; i++) 
+        if(a[i] &lt;= n) &#123;
+            puts(&quot;-1&quot;);
+            return 0;
+        &#125;
+    mn[1] = a[1];
+    for(int i = 2; i &lt;= n; i++) mn[i] = min(mn[i-1], a[i]);
+    mx[n] = a[n];
+    for(int i = n-1; i; i--) mx[i] = max(mx[i+1], a[i]);
+    for(int i = 1; i &lt; n; i++) 
+        if (mn[i] &gt; mx[i+1]) dd[++tot] = i;
+    dd[++tot] = n;
+    for(int k = 1; k &lt;= tot; k++) &#123;
+        int sum = 0, AT = 0, BT = 0;
+        for (int i = dd[k-1]+1; i &lt;= dd[k]; i++) &#123;
+            if (!AT || AT &amp;&amp; A[AT] &gt; a[i]) A[++AT] = a[i], sum += b[i];
+            else if(!BT || BT &amp;&amp; B[BT] &gt; a[i]) B[++BT] = a[i], sum += b[i]^1;
+            else return puts(&quot;-1&quot;)&amp;0;
+        &#125;
+        ans += min(sum, dd[k]-dd[k-1]-sum);
+    &#125;
+    printf(&quot;%d\n&quot;,ans);
+//    system(&quot;pause&quot;);
+    return 0;
+&#125;
+
+
                         
                     </p>
                 </a>
