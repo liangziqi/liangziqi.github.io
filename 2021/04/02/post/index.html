@@ -12,13 +12,16 @@
 
 
 
-    <meta name="description" content="
+    <meta name="description" content="今天打了热身赛，三道签到题。但我没做出来，过来一个星期没练就生疏了。
+T1让你求在n个数中取k个能得到的最大和，经典sb题。
+T2题意是n个数，第i次操作是让第i个数加上（n-1）*s，其他数减去s。
+打的时候脑瘫了，让队友去写线段树，队友写炸了。大雾
+
+
+
     
     
-        MathJax.Hub.Config({
-            tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-          ..."/>
+       ..."/>
 
 
 <meta name="Robots" content="all">
@@ -78,7 +81,13 @@
     </div>
 
     <div class="post-content">
-        <head>
+        <p>今天打了热身赛，三道签到题。但我没做出来，过来一个星期没练就生疏了。</p>
+<p>T1让你求在n个数中取k个能得到的最大和，经典sb题。</p>
+<p>T2题意是n个数，第i次操作是让第i个数加上（n-1）*s，其他数减去s。</p>
+<p>打的时候脑瘫了，让队友去写线段树，队友写炸了。<del>大雾</del></p>
+<span id="more"></span>
+
+<head>
     <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
     <script type="text/x-mathjax-config">
         MathJax.Hub.Config({
@@ -89,12 +98,8 @@
         });
     </script>
 </head>
-今天打了热身赛，三道签到题。但我没做出来，过来一个星期没练就生疏了。
+容易看出第i次操作后，位置为[1,i]的数的值为原数+(n-i)*s。
 
-<p>T1让你求在n个数中取k个能得到的最大和，经典sb题。</p>
-<p>T2题意是n个数，第i次操作是让第i个数加上（n-1）*s，其他数减去s。</p>
-<p>打的时候脑瘫了，让队友去写线段树，队友写炸了。<del>大雾</del></p>
-<p>容易看出第i次操作后，位置为[1,i]的数的值为原数+(n-i)*s。</p>
 <p>位置为[i+1,n]的数的值为原数-i*s。</p>
 <p>所以做前后缀min，对于每一次操作都能o(1)求最小值。</p>
 <p>T3题意是有n个路灯位置为[1,n]，k个雕塑，告诉你k个雕塑的位置与价值，从i路灯移到j路灯的代价为|i-j|*s。问将雕塑按位置使价值从小到大排列的最小代价，k&lt;=n&lt;=5000。</p>

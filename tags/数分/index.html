@@ -70,72 +70,7 @@
                 <a href="/2021/04/04/improper-integral/">
                     <p>
                         
-                            无穷限反常积分定义
-    
-    
-        MathJax.Hub.Config({
-            tex2jax: {
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-            inlineMath: [['$','$']]
-            }
-        });
-    
-
-设函数f定义在无穷区间[a,$+\infty$)上，且在任何有限区间[a,u]上可积。如果存在极限
-$$\lim_{u\rightarrow+\infty}\int ^u_a f(x)dx =J$$
-则称极限J为函数在[a,$+\infty$)上的无穷限反常积分
-
-并称$\int ^{+\infty}_a f(x)dx$ 收敛。如果极限J不存在，则称其发散。
-瑕积分定义设函数f在(a,b]上，在点a的任一右邻域上无上界但在任何闭区间[u,b]$\subset$(a,b]上有界且可积，如果存在极限:$$\lim_{u\rightarrow{a^+}}\int ^b_u f(x)dx = J$$
-则极限J为无界函数的反常积分，并称反常积分$\int ^b_a f(x)dx$收敛，反之则发散
-由于被积函数在点a近旁是无界的，这是点a称为f的瑕点，而无界函数反常积分$\int ^b_a f(x)dx$又称为瑕积分。
-无穷积分的性质定理一无穷积分$\int ^{+\infty}_a f(x)dx$ 收敛的充分必要条件是:
-对于${\forall}\epsilon &gt; 0$,$\exists G&gt;0$,只要M,N&gt;G,便有$$|\int ^M_a f(x)dx - \int ^N_a f(x)dx| = |\int ^M_N f(x)dx| &lt; \epsilon$$
-性质一$\int ^{+\infty}_a f1(x)dx$收敛，$\int ^{+\infty}_a g(x)dx$收敛,那么$\int ^{+\infty}_a [k1f(x)+k2g(x)]dx$也收敛,且:$\int ^{+\infty}_a [k1f(x)+k2g(x)]dx$=$\int ^{+\infty}_a f1(x)dx$ + $\int ^{+\infty}_a g(x)dx$
-性质二$\int ^{+\infty}_a f(x)dx$收敛的另一个充要条件:
-$\forall \epsilon &gt;0$,$\exists G \geq a$，当u &gt; G时，总有$|\int ^{+\infty}_u f(x)dx| &lt; \epsilon$
-性质三若f在任何有限区间[a,u]上可积，且有$\int ^{+\infty}_a |f(x)|dx$收敛，则$\int ^{+\infty}_a f(x)dx$也必收敛，并有:$$|\int ^{+\infty}_a f(x)dx| \leq \int ^{+\infty}_a |f(x)|dx$$
-$\int ^{+\infty}_a |f(x)|dx$收敛时收敛时，称$\int ^{+\infty}_a |f(x)|dx$为绝对收敛。绝对收敛的无穷积分，自身一定收敛，逆命题不成立。
-收敛而不绝对收敛者称为条件收敛
-非负函数无穷积分的敛散判别法定理(比较原则)
-设定义在[a,$+/infty$)上的两个非负函数f和g都在任何有限区间[a,u]上可积,且满足$$f(x) \leq g(x), x \in [a,+\infty)$$
-
-则当$\int ^{+\infty}_a g(x)dx$收敛时,$\int ^{+\infty}_a f(x)dx$必收敛($\int ^{+\infty}_a f(x)dx$发散时,$\int ^{+\infty}_a g(x)dx$必发散)
-推论1若f和g都在任何有限区间[a,u]上可积,当$x \in [a,+\infty)$时,f(x)&gt;=0,g(x)&gt;0,且$\lim_{x\rightarrow+\infty}{\frac{f(x)}{g(x)}}=c$,则有:
-
-(i) 当 0 &lt; c &lt; $+\infty$时,$\int ^{+\infty}_a f(x)dx$ 与$\int ^{+\infty}_a g(x)dx$ 同敛态
-
-
-(ii)当 c = 0 时,由$\int ^{+\infty}_a g(x)dx$ 收敛可推知$\int ^{+\infty}_a f(x)dx$ 收敛
-
-
-(iii) 当 c = $+\infty$ 时,由$\int ^{+\infty}_a g(x)dx$ 发散可推知$\int ^{+\infty}_a f(x)dx$ 也发散
-
-如果选用$\int ^{+\infty}_1 \frac{dx}{x^p}$作为比较对象,则有以下两个推论(柯西判别法)
-推论2设f定义于[a,$+\infty$)(a&gt;0),且在任何有限区间[a,u]上可积,则有
-
-(i) 当 $0 \leq f(x) \leq \frac{1}{x^p}, x \in [a,+\infty)$,且p &gt; 1,$\int ^{+\infty}_a f(x)dx$ 收敛
-
-
-(ii) 当 $f(x) \geq \frac {1}{x^p}, x \in [a,+\infty)$,p $\leq$ 1,$\int ^{+\infty}_a f(x)dx$ 发散
-
-推论3设f是定义于[a,$+\infty$)上的非负函数,在任何有限区间[a,u]上可积,且$\lim_{x\rightarrow+\infty}x^p f(x) = \lambda$ 则有:
-
-(i) $p &gt; 1,0 \leq \lambda &lt; +\infty$ 时,$\int^{+\infty}_a f(x)dx$ 收敛.
-
-
-(ii) $p \leq 1, 0 &lt; \lambda \leq +\infty$ 时, $\int^{+\infty}_a f(x)dx$ 发散
-
-一般无穷积分的敛散判别法狄利克雷判别法若 $F(u) = \int ^u_a f(x)dx$ 在[a,$+\infty$)上有界,g(x)在[a,$+\infty$)上当$x\rightarrow +\infty$时单调趋于0,则$\int^{+\infty}_a f(x)g(x)dx$ 收敛
-证明:
-设$|\int^u_a f(x)dx| \leq M, u \in [a,+\infty)$.
-$\forall \epsilon &gt; 0, \exists G \geq a,x &gt; G$时,有$$|g(x)| &lt; \frac{\epsilon}{4M}$$g为单调函数,由第二中值定理推论:对于任何b&gt;a&gt;G,$\exists t \in [a,b]$ 使得$$\int^b_a f(x)g(x)dx = g(a)\int^t_a f(x)dx + g(b)\int^b_t f(x)dx$$于是$$|\int^b_a f(x)g(x)dx| = |g(a)||\int^t_a f(x)dx| + |g(b)||\int^b_t f(x)dx|$$$$|\int^b_a f(x)g(x)dx| \leq \frac{\epsilon}{4M}*4M = \epsilon$$证毕
-阿贝尔(Abel)判别法(为什么不叫阿贝多)若$\int^{+\infty}_a f(x)dx$ 收敛,g(x)在[a,$+\infty$)上单调有界,则$\int^{+\infty}_af(x)g(x)dx$ 收敛
-证明:设$J = \lim_{x\rightarrow +\infty}g(x)$
-$$\int^{+\infty}_a f(x)g(x)dx = J\int^{+\infty}_a f(x)dx+\int^{+\infty}_a f(x)[g(x)-J]dx$$
-右边第一项收敛,第二项可以用上述的狄利克雷判别法证明其收敛,所以$\int^{+\infty}_a f(x)g(x)dx$收敛
-由于瑕积分的性质,敛散判别法基本于无穷积分相似,故不再赘述(其实是因为我懒
-
+                            为了考试复习数分
                         
                     </p>
                 </a>
