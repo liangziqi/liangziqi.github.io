@@ -8,26 +8,28 @@
 
 
 
-    <meta name="keywords" content="ACM,"/>
+    <meta name="keywords" content="ACM,水,"/>
 
 
 
-    <meta name="description" content="今天打了热身赛，三道签到题。但我没做出来，过来一个星期没练就生疏了。
-T1让你求在n个数中取k个能得到的最大和，经典sb题。
-T2题意是n个数，第i次操作是让第i个数加上（n-1）*s，其他数减去s。
-打的时候脑瘫了，让队友去写线段树，队友写炸了。大雾
+    <meta name="description" content="大学的第一块金牌
+
+成功成为金牌线大雾，真刺激。
+据说是本校的第一块金牌。
 
 
 
     
     
-       ..."/>
+        MathJax.Hub.Config({
+            tex2jax: {
+            skipTags: ['script', 'noscript',..."/>
 
 
 <meta name="Robots" content="all">
 
 
-    <title>Maomaofat&#39;s Blog | 昆明热身赛</title>
+    <title>Maomaofat&#39;s Blog | 18届浙江省赛</title>
 
 
 <link rel="icon" href="/images/favicon.ico">
@@ -65,26 +67,26 @@ T2题意是n个数，第i次操作是让第i个数加上（n-1）*s，其他数�
         <section class="content global-width">
             <div class="main">
                 <article class="box post">
-    <div class="post-title align-center detail-title">昆明热身赛</div>
+    <div class="post-title align-center detail-title">18届浙江省赛</div>
     <div class="post-meta align-center">
         
-        <i class="fa fa-calendar"></i> <time>2021-04-02</time>
+        <i class="fa fa-calendar"></i> <time>2021-04-17</time>
         <span class="dotted">|</span>
         <i class="fa fa-user"></i> 
         
             
             
                 <i class="fa fa-tags"></i>
-                <a class="tag-none-link" href="/tags/ACM/" rel="tag">ACM</a>
+                <a class="tag-none-link" href="/tags/ACM/" rel="tag">ACM</a>, <a class="tag-none-link" href="/tags/%E6%B0%B4/" rel="tag">水</a>
             
         
     </div>
 
     <div class="post-content">
-        <p>今天打了热身赛，三道签到题。但我没做出来，过来一个星期没练就生疏了。</p>
-<p>T1让你求在n个数中取k个能得到的最大和，经典sb题。</p>
-<p>T2题意是n个数，第i次操作是让第i个数加上（n-1）*s，其他数减去s。</p>
-<p>打的时候脑瘫了，让队友去写线段树，队友写炸了。<del>大雾</del></p>
+        <p>大学的第一块金牌<img src="/images/happy.webp"></p>
+<p><img src="fjp.png"></p>
+<p>成功成为金牌线<del>大雾</del>，真刺激。</p>
+<p>据说是本校的第一块金牌。</p>
 <span id="more"></span>
 
 <head>
@@ -98,15 +100,27 @@ T2题意是n个数，第i次操作是让第i个数加上（n-1）*s，其他数�
         });
     </script>
 </head>
-容易看出第i次操作后，位置为[1,i]的数的值为原数+(n-i)*s。
 
-<p>位置为[i+1,n]的数的值为原数-i*s。</p>
-<p>所以做前后缀min，对于每一次操作都能o(1)求最小值。</p>
-<p>T3题意是有n个路灯位置为[1,n]，k个雕塑，告诉你k个雕塑的位置与价值，从i路灯移到j路灯的代价为|i-j|*s。问将雕塑按位置使价值从小到大排列的最小代价，k&lt;=n&lt;=5000。</p>
-<p>比较水的动态规划，dp[i][j]表示在1-j的位置上保证前i个雕塑合法的最优解。</p>
-<p>那么dp[i][j]=$\max(dp[i][j-1],dp[i-1][j-1]+\lvert i-j \rvert*s)$</p>
-<p>所以热身赛都是水题<del>感觉全场只有我没有AK</del></p>
-<p><img src="/images/mnz.jpg" alt="我太菜了"></p>
+<p>从前往后看，A是水题。</p>
+<p>M的题意好像是1个老师和n-1个学生比赛，队友看不懂操作，我看了一眼数据不知道他为什么要给n=1。</p>
+<p>然后我就跟队友说，会不会是他的答案其实都是0，所以样例才会给1</p>
+<p>然后我们直接输出0，A了(好家伙</p>
+<p>然后把ACFGIJLM切了。</p>
+<p>还有一个小时，看D。</p>
+<blockquote>
+<p>题意:n个点，m条边，保证连边的两个点用二进制表示，u是v的前缀，无向图，q个询问，求从$s_i$到$t_i$的最短路.n,q&lt;=100000,m&lt;=200000</p>
+</blockquote>
+<p>想了半小时，感觉其实只要把这个图当成有向图来做,然后每个点暴力找最短路,然后用一个map存每个点到其他点的最短路,这样就行了。</p>
+<p>没调出来，后来发现有个地方写错了，如果写对的话不知道有没有9题。</p>
+<p>B题好像是告诉n个矩阵，q个询问，求除了l~r的矩阵，其他矩阵覆盖的面积。</p>
+<p>感觉是二维线段树还是扫描线，弃了弃了。</p>
+<p>E是求一个序列的最长回文子序列，可以改0~100个数字。</p>
+<p>看到n=1e7直接弃疗。</p>
+<p>K题我没看。</p>
+<p>H题是算亵渎（算什么亵渎，要一个1要以个2要一个3，这个撞一下是4。！@#￥￥%@#%#@￥%！@#￥%@%##￥*&amp;，扭了扭了）。</p>
+<p>一直在想Deathrattle是什么意思，然后下线后群友说是亡语（草，实验室的字典都被ec队拿走了。</p>
+<p>高中生好强啊，吊打本科生。</p>
+<p>特开心，成功摸到一块金牌。</p>
 
     </div>
 </article>
